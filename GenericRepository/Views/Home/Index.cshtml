@@ -1,0 +1,26 @@
+﻿@model GenericRepository.Context.User
+
+
+
+
+@using (Html.BeginForm("AddUser","Home",FormMethod.Post))
+{
+    
+    @Html.TextBoxFor(s => s.Name)
+    <br />
+
+    @Html.TextBoxFor(s=>s.Surname)
+    <br />
+
+    @Html.TextBoxFor(s=>s.Email)
+    <br />
+
+    @Html.TextBoxFor(s=>s.IsActivated)
+    <br />
+
+    @Html.TextBoxFor(s=>s.Guid)
+    <br />
+    <input type="submit" value="Gönder" />
+
+
+}

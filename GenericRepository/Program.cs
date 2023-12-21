@@ -1,6 +1,7 @@
 using GenericRepository.Context;
 using GenericRepository.GenericRepository;
 using GenericRepository.Services;
+using GenericRepository.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<UserContext>(s => s.UseSqlServer(connectionString)
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped(typeof(UnitOfWork));
 
 var app = builder.Build();
 

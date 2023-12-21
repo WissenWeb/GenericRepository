@@ -20,9 +20,10 @@ namespace GenericRepository.GenericRepository
         }
         public void Add(TEntity entity)
         {
-            //_context.Set<TEntity>().Add(entity);
             _context.Add(entity);
-            _context.SaveChanges();
+           // _context.Entry(entity).State = EntityState.Added;
+            
+            
         }
 
         public IEnumerable<TEntity> GetAll()
